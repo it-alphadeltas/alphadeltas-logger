@@ -1,0 +1,44 @@
+{
+    "name": "alphadeltas/logger",
+    "description": ":description",
+    "license": "license",
+    "authors": [
+        {
+            "name": "Bohdan Klochko",
+            "email": "bohdanklochko1@gmail.com",
+            "homepage": "https://github.com/hasfoug"
+        }
+    ],
+    "homepage": "https://github.com/alphadeltas/logger",
+    "keywords": ["Laravel", "logger"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0",
+        "timacdonald/log-fake": "^1.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "AlphaDeltas\\Logger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AlphaDeltas\\Logger\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlphaDeltas\\Logger\\Providers\\LoggerServiceProvider"
+            ]
+        }
+    }
+}
