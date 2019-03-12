@@ -17,15 +17,23 @@ $ composer require alphadeltas/logger
 
 ## Usage
 
+You may use LogMiddleware to log any request to your endpoints you just need to enable it in your routes.
+
+You also may use LoggerServiceProvider to log jobs and commands.
+You need to enable it in your config/app.php file (hopefully this will be added by composer automatically). 
+Add this line to providers array: 
+
+``` php
+'providers' => [
+    ...,
+    AlphaDeltas\Logger\Providers\LoggerServiceProvider::class,
+    ...
+],
+```
+
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
 
 ## Contributing
 
