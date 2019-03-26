@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace AlphaDeltas\Logger\Listeners;
 
 use Illuminate\Console\Events\CommandStarting;
-use Log;
+use Illuminate\Support\Facades\Log;
 
 class CommandStartingListener
 {
