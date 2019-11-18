@@ -13,15 +13,16 @@ class LogMiddleware
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Closure                 $next
+     * @param  array                    $fields
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, array $fields = [])
     {
         Log::info('Endpoint was hit.', [
             'url'    => $request->getRequestUri(),
             'method' => $request->method(),
-            'params' => $request->input(),
+            'params' => empty($fields) ? $request->input() : collect($request->input())->only($fields)->all(),
             'user'   => optional($request->user())->only('id', 'email', 'name'),
         ]);
 
