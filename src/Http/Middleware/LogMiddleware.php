@@ -76,7 +76,7 @@ class LogMiddleware
             try {
                 return call_user_func($fields, $request, $route);
             } catch (\Exception $e) {
-                Log::error('LogMiddleware::getFieldsFromConfig error', [
+                Log::error('LogMiddleware::getParamsUsingConfig callback error ', [
                     'route' => $route->uri(),
                     'method' => $request->method(),
                     'exception' => $e->getMessage(),
