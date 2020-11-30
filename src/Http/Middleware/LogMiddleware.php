@@ -81,6 +81,7 @@ class LogMiddleware
                     'method' => $request->method(),
                     'exception' => $e->getMessage(),
                 ]);
+                return $request->input();
             }
         }
 
