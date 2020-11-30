@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace AlphaDeltas\Logger\Providers;
 
+use AlphaDeltas\Grampa\Middleware\AuthGrampa;
 use AlphaDeltas\Logger\Listeners\CommandFinishedListener;
 use AlphaDeltas\Logger\Listeners\CommandStartingListener;
 use Illuminate\Console\Events\CommandFinished;
@@ -64,5 +65,20 @@ class LoggerServiceProvider extends ServiceProvider
                 'job' => $event->job->payload()['displayName'],
             ]);
         });
+
+        $this->publishes([
+            __DIR__ . '/../resources/config' => config_path('logger'),
+        ], 'config');
+    }
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        // Merge options with published config
+        $this->mergeConfigFrom(__DIR__ . '/../resources/config/routes.php', 'logger.routes');
     }
 }
