@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace AlphaDeltas\Logger\Providers;
 
-use AlphaDeltas\Grampa\Middleware\AuthGrampa;
 use AlphaDeltas\Logger\Listeners\CommandFinishedListener;
 use AlphaDeltas\Logger\Listeners\CommandStartingListener;
 use Illuminate\Console\Events\CommandFinished;
