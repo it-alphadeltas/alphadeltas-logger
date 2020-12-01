@@ -31,6 +31,13 @@ Add this line to providers array:
 ],
 ```
 
+You can also publish config with the following command:
+
+``` bash
+php artisan vendor:publish --provider="AlphaDeltas\Logger\Providers\LoggerServiceProvider" --tag=config
+```
+
+
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
